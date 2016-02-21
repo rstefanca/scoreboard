@@ -16,9 +16,6 @@ const PlayerButton = ({ onClick, text }) => (
     </a>
 )
 
-
-
-
 const Player = ({ onScoreClick, onPenaltyClick, player }) => (
   <li>
     #{player.number}  {player.name}  P: {player.points} F: {player.penalties}
