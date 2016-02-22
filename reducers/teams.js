@@ -20,7 +20,6 @@ const player = (state, action) => {
 
 		default:
 			return state
-
 	}
 }
 
@@ -46,23 +45,20 @@ const team = (state, action) => {
 	}
 }
 
-export const hosts = (state = {players: []}, action) => {
-	switch(action.type) {
-		case 'START_GAME':
-			return action.teams[1]
+const teamsReducer = (state, action, teamProvider) => {
+    switch(action.type) {
+        case 'START_GAME':
+            return teamProvider(action)
+        default:
+            return team(state, action)
+    }
+}
 
-		default:
-			return team(state, action)
-	}
+export const hosts = (state = {players: []}, action) => {
+    return teamsReducer(state, action, (a) => a.teams[1])
 }
 
 export const guests = (state = { players: [] }, action) => {
-	switch(action.type) {
-		case 'START_GAME':
-			return action.teams[0]
-			
-		default:
-			return team(state, action)	
-	}
+    return teamsReducer(state, action, (a) => a.teams[0])
 }
 

@@ -21,9 +21,7 @@ const Player = ({ onScoreClick, onPenaltyClick, player }) => (
     #{player.number}  {player.name}  P: {player.points} F: {player.penalties}
 
     {[1,2,3].map(p => <PlayerButton key={"b-" + p + player.id} onClick={() => onScoreClick(player.id, p)} text={p}/>  )} 
-    <PlayerButton key={"p-" + player.id} onClick={() => onPenaltyClick(player.id)} text="P"/> 
-    
-
+    <PlayerButton key={"p-" + player.id} onClick={() => onPenaltyClick(player.id)} text="P"/>
   </li>
 )
 

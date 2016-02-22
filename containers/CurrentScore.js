@@ -21,10 +21,6 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {}
-}
-
-const CurrentScore = connect(mapStateToProps, mapDispatchToProps)(Score)
+const CurrentScore = connect(mapStateToProps)(Score)
 
 export default CurrentScore

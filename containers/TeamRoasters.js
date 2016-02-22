@@ -6,7 +6,7 @@ import Roster from '../components/Roster'
 const mapStateToProps = (state) => {
 	return {
 		guests: state.guests.players,
-		hosts: state.hosts.players,
+		hosts: state.hosts.players
 	}
 }
 

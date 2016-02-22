@@ -21,10 +21,6 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {}
-}
-
-const CurrentPenalties = connect(mapStateToProps, mapDispatchToProps)(Penalties)
+const CurrentPenalties = connect(mapStateToProps)(Penalties)
 
 export default CurrentPenalties
